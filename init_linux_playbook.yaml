@@ -1,0 +1,20 @@
+# linux初始化playbook
+---
+- hosts: local
+  tasks:
+    - name: git clone my_linux_configs
+      git: dest=/opt/projects/my_linux_configs repo=https://github.com/duoduo369/my_linux_configs.git
+    - name: git clone skill_issues
+      git: dest=/opt/projects/skill_issues repo=https://github.com/duoduo369/skill_issues.git
+    - name: git clone oh-my-zsh
+      git: dest=~/.oh-my-zsh repo=https://github.com/duoduo369/oh-my-zsh.git
+    - name: cp oh-my-zsh to home
+      shell: cp ~/.oh-my-zsh/.zshrc ~/.zshrc && sudo apt-get install zsh && chsh -s /bin/zsh
+    - name: git clone janus
+      git: dest=/opt/projects/janus repo=https://github.com/duoduo369/janus
+    - name: tar janas
+      shell: tar zxvf /opt/projects/janus/janus.tar.gz -C /opt/projects/janus
+    - name: cp janas to home
+      shell: cp -fr home/duoduo/.vim ~/.vim && ln -s ~/.vim/janus/vim/vimrc ~/.vimrc && cp ~/.vim/config/.vimrc.after ~/.vimrc.after
+    - name: install janus requiremnts
+      shell: sudo apt-get install ruby-dev rake exuberant-ctags ack-grep
