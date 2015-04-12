@@ -2,8 +2,12 @@
 ---
 - hosts: local
   tasks:
+    - name: install plugins
+      shell: sudo apt-get install git tmux zsh
     - name: git clone my_linux_configs
       git: dest=/opt/projects/my_linux_configs repo=https://github.com/duoduo369/my_linux_configs.git
+    - name: cp my_linux_configs to special location
+      shell: cd /opt/projects/my_linux_configs && cp .gitconfig ~/ && cp .tmux.conf ~/ && cp -r .pip ~/ && cp .vimrc.after ~/
     - name: git clone skill_issues
       git: dest=/opt/projects/skill_issues repo=https://github.com/duoduo369/skill_issues.git
     - name: git clone oh-my-zsh
