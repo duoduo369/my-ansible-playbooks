@@ -23,5 +23,7 @@ playbook主要工作:
 3. 安装定制的oh-my-zsh
 4. 安装定制的vim(janus)
 
+
     cd /opt/projects/my-ansible-playbooks
+
     ansible-playbook init_linux_playbook.yaml --ask-pass
