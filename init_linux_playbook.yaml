@@ -3,7 +3,7 @@
 - hosts: local
   tasks:
     - name: install plugins
-      shell: sudo apt-get install git tmux zsh
+      shell: sudo apt-get install -y git tmux zsh tig
     - name: git clone my_linux_configs
       git: dest=/opt/projects/my_linux_configs repo=https://github.com/duoduo369/my_linux_configs.git
     - name: cp my_linux_configs to special location
@@ -19,6 +19,6 @@
     - name: tar janas
       shell: tar zxvf /opt/projects/janus/janus.tar.gz -C /opt/projects/janus
     - name: cp janas to home
-      shell: cp -fr home/duoduo/.vim ~/.vim && ln -s ~/.vim/janus/vim/vimrc ~/.vimrc && cp ~/.vim/config/.vimrc.after ~/.vimrc.after
+      shell: cp -fr /opt/projects/janus/home/duoduo/.vim ~/ && cp -r ~/.vim/janus/vim/vimrc ~/.vimrc && cp -r ~/.vim/config/.vimrc.after ~/.vimrc.after
     - name: install janus requiremnts
-      shell: sudo apt-get install ruby-dev rake exuberant-ctags ack-grep
+      shell: sudo apt-get install -y ruby-dev rake exuberant-ctags ack-grep

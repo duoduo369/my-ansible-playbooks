@@ -8,7 +8,8 @@ Usage
     sudo apt-get install sshpass
     mkdir ~/projects
     sudo ln -s ~/projects /opt
-    git clone https://github.com/duoduo369/my-ansible-playbooks.git /opt/projects
+    cd /opt/projects
+    git clone https://github.com/duoduo369/my-ansible-playbooks.git
     sudo mkdir -p /etc/ansible
     sudo cp /opt/projects/my-ansible-playbooks/ansible.cfg /etc/ansible/ansible.cfg
     cp /opt/projects/my-ansible-playbooks/ansible_hosts ~/
