@@ -27,4 +27,4 @@ playbook主要工作:
 
     cd /opt/projects/my-ansible-playbooks
 
-    ansible-playbook init_linux_playbook.yaml --ask-pass
+    ansible-playbook -i "localhost," -c local init_linux_playbook.yaml

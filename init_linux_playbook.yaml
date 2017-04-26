@@ -1,6 +1,6 @@
 # linux初始化playbook
 ---
-- hosts: local
+- hosts: all
   tasks:
     - name: install plugins
       shell: sudo apt-get install -y git tmux zsh tig
